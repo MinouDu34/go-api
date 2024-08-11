@@ -4,3 +4,16 @@ This project is a RESTful API built using Go. The API provides endpoints for man
 Features
 - RESTful endpoints for CRUD operations
 - Logging
+
+Prerequisites
+Before running this project, ensure that you have the following installed:
+
+- Go 1.XX or higher
+
+Getting Started
+Clone the repository
+
+```bash
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+```
