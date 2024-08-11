@@ -38,8 +38,8 @@ The API will be available at http://localhost:8080.
 API Endpoints
 Here is a brief overview of the available endpoints:
 
-GET /api/v1/resource - Retrieves a list of resources
-GET /api/v1/resource/{id} - Retrieves a specific resource by ID
-POST /api/v1/resource - Creates a new resource
-PUT /api/v1/resource/{id} - Updates a specific resource by ID
-DELETE /api/v1/resource/{id} - Deletes a specific resource by ID
+- GET /api/v1/resource - Retrieves a list of resources
+- GET /api/v1/resource/{id} - Retrieves a specific resource by ID
+- POST /api/v1/resource - Creates a new resource
+- PUT /api/v1/resource/{id} - Updates a specific resource by ID
+- DELETE /api/v1/resource/{id} - Deletes a specific resource by ID
