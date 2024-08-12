@@ -1,9 +1,11 @@
-package main
+package credential
 
 import (
 	"fmt"
+	"net/http"
 	"time"
 
+	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"
 )
 
@@ -20,15 +22,15 @@ type Claims struct {
 }
 
 func main() {
-	token := generate_token()
+	token := generate_token("Lucas")
 	read_token(token)
 	fmt.Println(token)
 }
 
-func generate_token() string {
+func generate_token(Username string) string {
 	expirationTime := time.Now().Add(5 * time.Minute)
 	claims := &Claims{
-		Username: "Lucas",
+		Username: Username,
 		StandardClaims: jwt.StandardClaims{
 			ExpiresAt: expirationTime.Unix(),
 		},
@@ -54,4 +56,12 @@ func read_token(tokenString string) {
 	}
 
 	fmt.Println("Welcome ", claims.Username)
+}
+
+func Send_token(c *gin.Context) {
+	username, password, ok := c.Request.BasicAuth()
+	cred := generate_token(username)
+	fmt.Println(cred)
+	fmt.Println(username, password, ok)
+	c.JSON(http.StatusOK, gin.H{"token": cred})
 }
